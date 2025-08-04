@@ -32,4 +32,5 @@ export default defineConfig({
   },
   // Настройки для GitHub Pages
   base: process.env.NODE_ENV === 'production' ? '/NutriCalc/' : '/',
+  publicDir: 'public',
 });

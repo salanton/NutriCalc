@@ -61,10 +61,14 @@ npm run preview
 ### GitHub Pages (Automatic)
 1. Push to `main` branch
 2. GitHub Actions automatically builds and deploys
-3. Available at: `https://[username].github.io/NutriCalc_backup/`
+3. Available at: `https://[username].github.io/NutriCalc/`
 
 ### Manual Deployment
 ```bash
+# Build and deploy to GitHub Pages
+npm run deploy
+
+# Or build only
 npm run build
 # Upload dist/ folder to your web server
 ```

@@ -1,0 +1,54 @@
+{
+  "nutrients": {
+    "seedling": {
+      "ghe": [
+        { "name": "FloraMicro", "perLiter": "0.5ml" },
+        { "name": "FloraGro", "perLiter": "0.5ml" },
+        { "name": "FloraBloom", "perLiter": "0.5ml" }
+      ],
+      "plagron": [
+        { "name": "Terra Grow", "perLiter": "1ml" },
+        { "name": "Alga Grow", "perLiter": "0.5ml" }
+      ],
+      "advanced": [
+        { "name": "Grow", "perLiter": "1ml" },
+        { "name": "Micro", "perLiter": "1ml" }
+      ]
+    },
+    "vegetative": {
+      "ghe": [
+        { "name": "FloraMicro", "perLiter": "1.5ml" },
+        { "name": "FloraGro", "perLiter": "2ml" },
+        { "name": "FloraBloom", "perLiter": "1ml" }
+      ],
+      "plagron": [
+        { "name": "Terra Grow", "perLiter": "3ml" },
+        { "name": "Alga Grow", "perLiter": "2ml" }
+      ],
+      "advanced": [
+        { "name": "Grow", "perLiter": "2ml" },
+        { "name": "Micro", "perLiter": "2ml" }
+      ]
+    },
+    "flowering": {
+      "ghe": [
+        { "name": "FloraMicro", "perLiter": "1.5ml" },
+        { "name": "FloraGro", "perLiter": "1ml" },
+        { "name": "FloraBloom", "perLiter": "3ml" }
+      ],
+      "plagron": [
+        { "name": "Terra Bloom", "perLiter": "3ml" },
+        { "name": "Alga Bloom", "perLiter": "2.5ml" }
+      ],
+      "advanced": [
+        { "name": "Bloom", "perLiter": "2ml" },
+        { "name": "Micro", "perLiter": "2ml" }
+      ]
+    },
+    "flush": {
+      "ghe": [],
+      "plagron": [],
+      "advanced": []
+    }
+  }
+} 

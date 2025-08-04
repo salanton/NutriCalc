@@ -1,0 +1,521 @@
+{
+  "id": "simplex",
+  "name": "Simplex",
+  "code": "simplex",
+  "description": "Simplex full nutrient line including additives and stimulators",
+  "description_ru": "Полная линейка питательных веществ Simplex, включая добавки и стимуляторы",
+  "nutrients": {
+    "soil": {
+      "germination": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "0ml"
+        }
+      ],
+      "vegetative": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0.5-2.0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "0ml"
+        }
+      ],
+      "pre-flowering": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "3.0-4.0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "0ml"
+        }
+      ],
+      "flowering-start": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "5.0-6.0ml"
+        }
+      ],
+      "flower-dev": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "5.0-6.0ml"
+        }
+      ],
+      "ripening": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "1.0-2.0ml"
+        }
+      ],
+      "flushing": [
+        {
+          "name": "Terra Vega",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Terra Bloom",
+          "perLiter": "0ml"
+        }
+      ]
+    },
+    "hydroponic": {
+      "germination": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "0ml"
+        }
+      ],
+      "vegetative": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0.5-1.5ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0.5-1.5ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "0ml"
+        }
+      ],
+      "pre-flowering": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "1.5-2.0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "1.5-2.0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "0ml"
+        }
+      ],
+      "flowering-start": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "1.5-2.0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "1.5-2.0ml"
+        }
+      ],
+      "flower-dev": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "3.0-4.0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "3.0-4.0ml"
+        }
+      ],
+      "ripening": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "1.0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "1.0ml"
+        }
+      ],
+      "flushing": [
+        {
+          "name": "Hydro Vega A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Vega B",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Hydro Bloom B",
+          "perLiter": "0ml"
+        }
+      ]
+    },
+    "coco": {
+      "germination": [
+        {
+          "name": "Coco A",
+          "perLiter": "1.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "1.0ml"
+        }
+      ],
+      "vegetative": [
+        {
+          "name": "Coco A",
+          "perLiter": "1.5-2.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "1.5-2.0ml"
+        }
+      ],
+      "pre-flowering": [
+        {
+          "name": "Coco A",
+          "perLiter": "2.0-3.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "2.0-3.0ml"
+        }
+      ],
+      "flowering-start": [
+        {
+          "name": "Coco A",
+          "perLiter": "2.0-3.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "2.0-3.0ml"
+        }
+      ],
+      "flower-dev": [
+        {
+          "name": "Coco A",
+          "perLiter": "2.0-3.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "2.0-3.0ml"
+        }
+      ],
+      "ripening": [
+        {
+          "name": "Coco A",
+          "perLiter": "1.5-2.0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "1.5-2.0ml"
+        }
+      ],
+      "flushing": [
+        {
+          "name": "Coco A",
+          "perLiter": "0ml"
+        },
+        {
+          "name": "Coco B",
+          "perLiter": "0ml"
+        }
+      ]
+    }
+  },
+  "ecPh": {
+    "soil": {
+      "germination": {
+        "ec": "0.4",
+        "ph": "6.5"
+      },
+      "vegetative": {
+        "ec": "0.5-1.3",
+        "ph": "6.5"
+      },
+      "pre-flowering": {
+        "ec": "1.1-1.8",
+        "ph": "6.5"
+      },
+      "flowering-start": {
+        "ec": "1.4-1.8",
+        "ph": "6.5"
+      },
+      "flower-dev": {
+        "ec": "1.4-1.8",
+        "ph": "6.5"
+      },
+      "ripening": {
+        "ec": "1.0",
+        "ph": "6.5"
+      },
+      "flushing": {
+        "ec": "0.4",
+        "ph": "6.5"
+      }
+    },
+    "hydroponic": {
+      "germination": {
+        "ec": "0.4",
+        "ph": "5.5"
+      },
+      "vegetative": {
+        "ec": "0.6-1.6",
+        "ph": "5.5-5.8"
+      },
+      "pre-flowering": {
+        "ec": "1.5-1.8",
+        "ph": "5.8-6.0"
+      },
+      "flowering-start": {
+        "ec": "1.3-2.0",
+        "ph": "6.0-6.2"
+      },
+      "flower-dev": {
+        "ec": "1.5-2.2",
+        "ph": "6.0-6.2"
+      },
+      "ripening": {
+        "ec": "1.2-1.8",
+        "ph": "6.2-6.4"
+      },
+      "flushing": {
+        "ec": "0.4",
+        "ph": "6.2-6.4"
+      }
+    },
+    "coco": {
+      "germination": {
+        "ec": "0.7-1.2",
+        "ph": "5.5"
+      },
+      "vegetative": {
+        "ec": "1.1-1.6",
+        "ph": "5.5-5.8"
+      },
+      "pre-flowering": {
+        "ec": "1.5-1.8",
+        "ph": "5.8-6.0"
+      },
+      "flowering-start": {
+        "ec": "1.5-1.8",
+        "ph": "6.0-6.2"
+      },
+      "flower-dev": {
+        "ec": "1.5-1.8",
+        "ph": "6.0-6.2"
+      },
+      "ripening": {
+        "ec": "1.1-1.6",
+        "ph": "6.2-6.4"
+      },
+      "flushing": {
+        "ec": "0.4",
+        "ph": "6.2-6.4"
+      }
+    }
+  },
+  "additives": [
+    {
+      "id": "calmag-plus",
+      "name": "CalMag Plus",
+      "defaultDose": "1.0-1.5",
+      "description": "Calcium and magnesium supplement",
+      "description_ru": "Добавка кальция и магния",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0.5-1.0",
+        "pre-flowering": "1.0-1.5",
+        "flowering-start": "1.0-1.5",
+        "flower-dev": "1.0-1.5",
+        "ripening": "1.0-1.5",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "taste",
+      "name": "Taste",
+      "defaultDose": "1.0-2.0",
+      "description": "Flavor and aroma enhancer",
+      "description_ru": "Усилитель вкуса и аромата",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0",
+        "pre-flowering": "0.5-1.0",
+        "flowering-start": "0.5-1.0",
+        "flower-dev": "1.0-2.0",
+        "ripening": "1.5-2.0",
+        "flushing": "1.5-2.0"
+      }
+    },
+    {
+      "id": "pk-boost",
+      "name": "PK Boost",
+      "defaultDose": "0.5-1.0",
+      "description": "Phosphorus and potassium booster",
+      "description_ru": "Усилитель фосфора и калия",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0",
+        "pre-flowering": "0",
+        "flowering-start": "0.5-1.0",
+        "flower-dev": "0",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "power",
+      "name": "Power",
+      "defaultDose": "1.0-2.0",
+      "description": "Flower power booster",
+      "description_ru": "Усилитель цветения",
+      "application": "foliar",
+      "foliarDose": "1-2 капли/100мл",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0",
+        "pre-flowering": "0",
+        "flowering-start": "1.0-2.0",
+        "flower-dev": "1.0-2.0",
+        "ripening": "1.0-2.0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "mass",
+      "name": "Mass",
+      "defaultDose": "0.25-0.5",
+      "description": "Mass and volume enhancer",
+      "description_ru": "Усилитель массы и объема",
+      "application": "foliar",
+      "foliarDose": "1-2 капли/300мл",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0",
+        "pre-flowering": "0.25-0.5",
+        "flowering-start": "0.25-0.5",
+        "flower-dev": "0.25-0.5",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "vega",
+      "name": "Vega",
+      "defaultDose": "1.0-2.0",
+      "description": "Vegetative growth stimulator",
+      "application": "foliar",
+      "foliarDose": "1-2 капли/100мл",
+      "stages": {
+        "germination": "0",
+        "vegetative": "1.0-2.0",
+        "pre-flowering": "1.0-2.0",
+        "flowering-start": "0",
+        "flower-dev": "0",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "silicx",
+      "name": "Silicx",
+      "defaultDose": "0.25-0.5",
+      "description": "Silicon supplement",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0.1-0.25",
+        "pre-flowering": "0.25-0.5",
+        "flowering-start": "0.25-0.5",
+        "flower-dev": "0.25-0.5",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "fulvic-gold",
+      "name": "Fulvic Gold",
+      "defaultDose": "2.0-3.0",
+      "description": "Fulvic acid supplement",
+      "stages": {
+        "germination": "0",
+        "vegetative": "2.0-3.0",
+        "pre-flowering": "2.0-3.0",
+        "flowering-start": "2.0-3.0",
+        "flower-dev": "2.0-3.0",
+        "ripening": "2.0-3.0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "aroma-punch",
+      "name": "Aroma Punch",
+      "defaultDose": "1.0-5.0",
+      "description": "Terpene and aroma enhancer",
+      "stages": {
+        "germination": "0",
+        "vegetative": "0.5",
+        "pre-flowering": "1.0",
+        "flowering-start": "2.0",
+        "flower-dev": "4.0",
+        "ripening": "5.0",
+        "flushing": "3.0"
+      }
+    }
+  ]
+} 

@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+  h3 {
+    @apply text-xl font-semibold;
+  }
+  h4 {
+    @apply text-base font-bold;
+  }
+  h5 {
+    @apply text-sm font-bold;
+  }
+  h6 {
+    @apply text-xs font-semibold;
+  }
+  
+  /* Section Descriptions - under titles */
+  .section-description {
+    @apply text-sm text-muted-foreground;
+  }
+  
+  /* Field Descriptions - under options/cards */
+  .field-description {
+    @apply text-xs text-muted-foreground;
+  }
+  
+  /* Data Descriptions - data items, values */
+  .data-description {
+    @apply text-sm text-muted-foreground;
+  }
+}
+
+/* Global Card System */
+.unified-card {
+  @apply flex items-center gap-3 text-left rounded-lg border cursor-pointer transition-all duration-200 hover:shadow-sm p-4;
+  min-height: 60px;
+  transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+}
+
+/* Mobile: Horizontal layout (icon left, content right) */
+@media (max-width: 640px) {
+  .unified-card {
+    @apply flex items-center gap-3 text-left;
+    min-height: 60px;
+    transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+  }
+  
+  .unified-card-icon {
+    @apply flex-shrink-0;
+  }
+  
+  .unified-card-content {
+    @apply flex flex-col flex-1 justify-center;
+    min-height: 40px; /* Минимальная высота контента */
+    transition: all 0.3s ease;
+  }
+  
+  /* Когда описания скрыты, центрируем контент */
+  .unified-card.hide-descriptions {
+    @apply items-center justify-center text-center;
+    min-height: 50px; /* Уменьшаем минимальную высоту когда описания скрыты */
+  }
+  
+  .unified-card.hide-descriptions .unified-card-content {
+    @apply justify-center items-center;
+    flex: 0 1 auto; /* Убираем flex-1, контент не растягивается */
+    min-height: 30px;
+  }
+  
+  .unified-card.hide-descriptions .unified-card-label {
+    @apply text-center;
+  }
+}
+
+/* Desktop: Vertical layout (centered) */
+@media (min-width: 641px) {
+  .unified-card {
+    @apply flex flex-col items-center justify-center text-center;
+    min-height: 80px; /* Больше места для вертикального layout */
+    transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+  }
+  
+  .unified-card-icon {
+    @apply mb-2;
+  }
+  
+  .unified-card-content {
+    @apply flex flex-col items-center;
+    min-height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Когда описания скрыты, центрируем контент */
+  .unified-card.hide-descriptions {
+    @apply justify-center;
+    min-height: 60px; /* Уменьшаем минимальную высоту когда описания скрыты */
+  }
+  
+  .unified-card.hide-descriptions .unified-card-content {
+    @apply justify-center;
+    min-height: 30px;
+  }
+}
+
+.unified-card:hover {
+  @apply border-primary/50;
+}
+
+.unified-card.selected {
+  @apply border-primary bg-primary/10 shadow-sm ring-2 ring-primary/20;
+}
+
+.unified-card:not(.selected) {
+  @apply border-muted;
+}
+
+/* Card Content Structure */
+.unified-card-icon {
+  @apply mb-2;
+}
+
+.unified-card-label {
+  @apply mb-1;
+}
+
+.unified-card-description {
+  @apply field-description mb-1;
+}
+
+.unified-card-dose {
+  @apply data-description;
+}
+
+/* Улучшенное центрирование контента */
+.unified-card-content {
+  @apply flex flex-col;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-width: 641px) {
+  .unified-card-content {
+    @apply items-center;
+  }
+}
+
+/* Card Size Variants */
+.unified-card-small {
+  @apply p-3;
+  min-height: 50px;
+  transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+}
+
+.unified-card-small.hide-descriptions {
+  min-height: 40px;
+}
+
+.unified-card-medium {
+  @apply p-4;
+  min-height: 60px;
+  transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+}
+
+.unified-card-medium.hide-descriptions {
+  min-height: 50px;
+}
+
+.unified-card-large {
+  @apply p-5;
+  min-height: 70px;
+  transition: all 0.3s ease, height 0.3s ease, min-height 0.3s ease;
+}
+
+.unified-card-large.hide-descriptions {
+  min-height: 60px;
+}
+
+/* Section Cards */
+.section-card {
+  @apply border-2 transition-all duration-200 hover:shadow-lg;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Smooth transitions */
+* {
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Focus states */
+.focus-visible:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.card-strikethrough {
+  position: relative;
+}
+.card-strikethrough svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}

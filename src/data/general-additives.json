@@ -1,0 +1,7 @@
+{
+  "additives": [
+    { "id": "mycorrhizae", "name": "Mycorrhizae", "defaultDose": "0.1g", "description": "Beneficial fungi for roots" },
+    { "id": "enzymes", "name": "Enzymes", "defaultDose": "2ml", "description": "Breaks down dead root matter" },
+    { "id": "seaweed", "name": "Seaweed Extract", "defaultDose": "2ml", "description": "Natural growth stimulator" }
+  ]
+} 

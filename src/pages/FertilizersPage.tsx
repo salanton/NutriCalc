@@ -53,6 +53,53 @@ export default function FertilizersPage() {
     }
   }, [selectedAdditives, selectedAdditiveBrands, setSelectedAdditiveBrands]);
 
+  // Auto-select first available line when brand is selected in normal mode
+  React.useEffect(() => {
+    if (!isProMode && nutrientBrand && growMethod && growthStage) {
+      const selectedBrand = brands.find(b => b.code === nutrientBrand);
+      if (selectedBrand && selectedBrand.nutrients && selectedBrand.nutrients[growMethod]) {
+        const nutrients = selectedBrand.nutrients[growMethod][growthStage] || [];
+        
+        // Check if any nutrients are already selected for this brand and method
+        const hasSelectedNutrients = nutrients.some(nutrient => 
+          isBaseNutrientSelected(nutrient.name, growMethod)
+        );
+        
+        // If no nutrients selected, auto-select the first available line
+        if (!hasSelectedNutrients && nutrients.length > 0) {
+          // Group nutrients by line
+          const nutrientsByLine = new Map<string, typeof nutrients>();
+          nutrients.forEach(nutrient => {
+            const lineName = (nutrient as any).line || nutrient.name.replace(/\s+[ABCD]$/, '');
+            if (!nutrientsByLine.has(lineName)) {
+              nutrientsByLine.set(lineName, []);
+            }
+            nutrientsByLine.get(lineName)!.push(nutrient);
+          });
+          
+          // Select the first line
+          const firstLine = Array.from(nutrientsByLine.values())[0];
+          if (firstLine && firstLine.length > 0) {
+            const nutrientsToSelect = firstLine.map(nutrient => ({
+              name: nutrient.name,
+              growMethod: growMethod
+            }));
+            
+            // Only add if not already in selectedBaseNutrients
+            const existingKeys = new Set(selectedBaseNutrients.map(n => `${n.name}__${n.growMethod}`));
+            const newNutrients = nutrientsToSelect.filter(n => 
+              !existingKeys.has(`${n.name}__${n.growMethod}`)
+            );
+            
+            if (newNutrients.length > 0) {
+              setSelectedBaseNutrients([...selectedBaseNutrients, ...newNutrients] as any);
+            }
+          }
+        }
+      }
+    }
+  }, [nutrientBrand, growMethod, growthStage, isProMode, brands, isBaseNutrientSelected, selectedBaseNutrients, setSelectedBaseNutrients]);
+
 
   const labels = isRussian ? {
     appTitle: 'Настройки рецепта питательных веществ',
@@ -339,7 +386,14 @@ export default function FertilizersPage() {
                                   }
                                 }
                               } else {
-                                setNutrientBrand(brand.code);
+                                // In normal mode, toggle selection: if already selected, deselect it
+                                if (nutrientBrand === brand.code) {
+                                  setNutrientBrand('');
+                                  // Also clear selected nutrients when deselecting brand
+                                  setSelectedBaseNutrients([]);
+                                } else {
+                                  setNutrientBrand(brand.code);
+                                }
                               }
                             }}
                           >

@@ -615,7 +615,7 @@ export default function WateringPage() {
                 title={
                   <>
                     <span className="hidden md:inline">{isRussian ? 'Значение капельницы' : 'Dripper Value'}</span>
-                    <span className="md:hidden">{isRussian ? 'Капельница' : 'Dripper'}</span>
+                    <span className="md:hidden text-sm sm:text-base">{isRussian ? 'Капельница' : 'Dripper'}</span>
                   </>
                 }
                 description={isRussian ? 'Расход одной капельницы' : 'Flow rate per dripper'}
@@ -627,7 +627,7 @@ export default function WateringPage() {
                 <div className="flex items-center justify-center">
                   <div className="flex flex-col items-center justify-center gap-2 w-full">
                     <div className="relative w-auto">
-                      <div className="text-2xl font-bold text-blue-600 w-full h-[48px] text-center flex items-center justify-center gap-0">
+                      <div className="text-xl sm:text-2xl font-bold text-blue-600 w-full h-[48px] text-center flex items-center justify-center gap-0 flex-nowrap">
                         <input
                           type="text"
                           value={dripperValue}
@@ -640,9 +640,9 @@ export default function WateringPage() {
                               }
                             }
                           }}
-                          className="w-16 text-2xl font-bold text-blue-600 bg-transparent border-none focus:outline-none focus:ring-0 p-0 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="w-12 sm:w-16 text-xl sm:text-2xl font-bold text-blue-600 bg-transparent border-none focus:outline-none focus:ring-0 p-0 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none flex-shrink-0"
                         />
-                        <span className="text-2xl font-bold text-blue-600 -ml-2">л/час</span>
+                        <span className="text-xl sm:text-2xl font-bold text-blue-600 -ml-1 sm:-ml-2 whitespace-nowrap flex-shrink-0">л/час</span>
                       </div>
                     </div>
                     <div className="flex items-center w-full -mx-2 px-2">

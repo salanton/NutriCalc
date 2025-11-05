@@ -128,33 +128,33 @@ export default function SettingsPage() {
                 <Label className="text-sm font-medium leading-none">
                   {isRussian ? 'Тема' : 'Theme'}
                 </Label>
-                <div className="flex gap-2">
+                <div className="flex gap-1 sm:gap-2">
                   <Button
                     variant={currentTheme === 'light' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${currentTheme === 'light' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${currentTheme === 'light' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setTheme('light')}
                   >
-                    <Sun className="h-4 w-4" />
-                    <span>{isRussian ? 'Светлая' : 'Light'}</span>
+                    <Sun className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm truncate">{isRussian ? 'Светлая' : 'Light'}</span>
                   </Button>
                   <Button
                     variant={currentTheme === 'system' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${currentTheme === 'system' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${currentTheme === 'system' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setTheme('system')}
                   >
-                    <Monitor className="h-4 w-4" />
-                    <span>{isRussian ? 'Системная' : 'System'}</span>
+                    <Monitor className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm truncate">{isRussian ? 'Системная' : 'System'}</span>
                   </Button>
                   <Button
                     variant={currentTheme === 'dark' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${currentTheme === 'dark' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${currentTheme === 'dark' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setTheme('dark')}
                   >
-                    <Moon className="h-4 w-4" />
-                    <span>{isRussian ? 'Темная' : 'Dark'}</span>
+                    <Moon className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm truncate">{isRussian ? 'Темная' : 'Dark'}</span>
                   </Button>
                 </div>
               </div>
@@ -164,33 +164,33 @@ export default function SettingsPage() {
                 <Label className="text-sm font-medium leading-none">
                   {isRussian ? 'Язык' : language === 'fr' ? 'Langue' : 'Language'}
                 </Label>
-                <div className="flex gap-2">
+                <div className="flex gap-1 sm:gap-2">
                   <Button
                     variant={language === 'en' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${language === 'en' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${language === 'en' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setLanguage('en')}
                   >
-                    <Languages className="h-4 w-4" />
-                    <span>EN</span>
+                    <Languages className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">EN</span>
                   </Button>
                   <Button
                     variant={language === 'ru' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${language === 'ru' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${language === 'ru' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setLanguage('ru')}
                   >
-                    <Languages className="h-4 w-4" />
-                    <span>RU</span>
+                    <Languages className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">RU</span>
                   </Button>
                   <Button
                     variant={language === 'fr' ? 'default' : 'outline'}
                     size="sm"
-                    className={`flex-1 flex items-center justify-center gap-2 ${language === 'fr' ? 'bg-primary text-primary-foreground' : ''}`}
+                    className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${language === 'fr' ? 'bg-primary text-primary-foreground' : ''}`}
                     onClick={() => setLanguage('fr')}
                   >
-                    <Languages className="h-4 w-4" />
-                    <span>FR</span>
+                    <Languages className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">FR</span>
                   </Button>
                 </div>
               </div>

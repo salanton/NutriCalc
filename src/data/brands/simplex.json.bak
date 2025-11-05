@@ -95,155 +95,127 @@
       "germination": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         }
       ],
       "vegetative": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0.5-1.5ml",
-          "line": "Hydro"
+          "perLiter": "0.5-1.5ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0.5-1.5ml",
-          "line": "Hydro"
+          "perLiter": "0.5-1.5ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         }
       ],
       "pre-flowering": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "1.5-2.0ml",
-          "line": "Hydro"
+          "perLiter": "1.5-2.0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "1.5-2.0ml",
-          "line": "Hydro"
+          "perLiter": "1.5-2.0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         }
       ],
       "flowering-start": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "1.5-2.0ml",
-          "line": "Hydro"
+          "perLiter": "1.5-2.0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "1.5-2.0ml",
-          "line": "Hydro"
+          "perLiter": "1.5-2.0ml"
         }
       ],
       "flower-dev": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "3.0-4.0ml",
-          "line": "Hydro"
+          "perLiter": "3.0-4.0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "3.0-4.0ml",
-          "line": "Hydro"
+          "perLiter": "3.0-4.0ml"
         }
       ],
       "ripening": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "1.0ml",
-          "line": "Hydro"
+          "perLiter": "1.0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "1.0ml",
-          "line": "Hydro"
+          "perLiter": "1.0ml"
         }
       ],
       "flushing": [
         {
           "name": "Hydro Vega A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Vega B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom A",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         },
         {
           "name": "Hydro Bloom B",
-          "perLiter": "0ml",
-          "line": "Hydro"
+          "perLiter": "0ml"
         }
       ]
     },
@@ -251,85 +223,71 @@
       "germination": [
         {
           "name": "Coco A",
-          "perLiter": "1.0ml",
-          "line": "Coco"
+          "perLiter": "1.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "1.0ml",
-          "line": "Coco"
+          "perLiter": "1.0ml"
         }
       ],
       "vegetative": [
         {
           "name": "Coco A",
-          "perLiter": "1.5-2.0ml",
-          "line": "Coco"
+          "perLiter": "1.5-2.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "1.5-2.0ml",
-          "line": "Coco"
+          "perLiter": "1.5-2.0ml"
         }
       ],
       "pre-flowering": [
         {
           "name": "Coco A",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         }
       ],
       "flowering-start": [
         {
           "name": "Coco A",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         }
       ],
       "flower-dev": [
         {
           "name": "Coco A",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "2.0-3.0ml",
-          "line": "Coco"
+          "perLiter": "2.0-3.0ml"
         }
       ],
       "ripening": [
         {
           "name": "Coco A",
-          "perLiter": "1.5-2.0ml",
-          "line": "Coco"
+          "perLiter": "1.5-2.0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "1.5-2.0ml",
-          "line": "Coco"
+          "perLiter": "1.5-2.0ml"
         }
       ],
       "flushing": [
         {
           "name": "Coco A",
-          "perLiter": "0ml",
-          "line": "Coco"
+          "perLiter": "0ml"
         },
         {
           "name": "Coco B",
-          "perLiter": "0ml",
-          "line": "Coco"
+          "perLiter": "0ml"
         }
       ]
     }
@@ -516,7 +474,6 @@
       "name": "Vega",
       "defaultDose": "1.0-2.0",
       "description": "Vegetative growth stimulator",
-      "description_ru": "Стимулятор вегетативного роста",
       "application": "foliar",
       "foliarDose": "1-2 капли/100мл",
       "stages": {
@@ -531,10 +488,9 @@
     },
     {
       "id": "silicx",
-      "name": "SilicX",
+      "name": "Silicx",
       "defaultDose": "0.25-0.5",
       "description": "Silicon supplement",
-      "description_ru": "Кремниевая добавка для укрепления клеточных стенок",
       "stages": {
         "germination": "0",
         "vegetative": "0.1-0.25",
@@ -550,7 +506,6 @@
       "name": "Fulvic Gold",
       "defaultDose": "2.0-3.0",
       "description": "Fulvic acid supplement",
-      "description_ru": "Добавка фульвовой кислоты для улучшения усвоения питательных веществ",
       "stages": {
         "germination": "0",
         "vegetative": "2.0-3.0",
@@ -566,7 +521,6 @@
       "name": "Aroma Punch",
       "defaultDose": "1.0-5.0",
       "description": "Terpene and aroma enhancer",
-      "description_ru": "Усилитель терпенов и аромата",
       "stages": {
         "germination": "0",
         "vegetative": "0.5",
@@ -578,4 +532,4 @@
       }
     }
   ]
-}
+} 

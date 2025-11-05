@@ -107,6 +107,11 @@ body {
     @apply text-sm text-muted-foreground;
   }
   
+  /* Align description with first letter when title has icon */
+  .CardHeader .CardTitle.flex + .section-description {
+    @apply pl-7;
+  }
+  
   /* Field Descriptions - under options/cards */
   .field-description {
     @apply text-xs text-muted-foreground;
@@ -309,4 +314,42 @@ body {
   height: 100%;
   z-index: 2;
   pointer-events: none;
+}
+
+/* Custom Slider Styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider:active::-webkit-slider-thumb {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.slider:active::-moz-range-thumb {
+  background: #2563eb;
+  transform: scale(1.1);
 }

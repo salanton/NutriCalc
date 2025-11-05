@@ -57,6 +57,7 @@ export default function SimplexCalc({ className = "", showThemeToggle = true }: 
   const [hideDescriptions, setHideDescriptions] = useState<boolean>(false)
   const [isProMode, setIsProMode] = useState<boolean>(false)
   const [isRussian, setIsRussian] = useState<boolean>(true)
+  const [showAverageValues, setShowAverageValues] = useState<boolean>(true)
 
   // When Pro mode is enabled, automatically enable hideDescriptions (but allow user to change it)
   useEffect(() => {
@@ -279,6 +280,8 @@ export default function SimplexCalc({ className = "", showThemeToggle = true }: 
               onIsProModeChange={setIsProMode}
               isRussian={isRussian}
               onIsRussianChange={setIsRussian}
+              showAverageValues={showAverageValues}
+              onShowAverageValuesChange={setShowAverageValues}
             />
             {showThemeToggle && <ThemeToggle />}
           </div>
@@ -322,20 +325,6 @@ export default function SimplexCalc({ className = "", showThemeToggle = true }: 
                     </div>
                     <div
                       className={`unified-card unified-card-medium ${
-                        growMethod === 'hydroponic' ? 'selected' : ''
-                      } ${hideDescriptions ? 'hide-descriptions' : ''}`}
-                      onClick={() => setGrowMethod('hydroponic')}
-                    >
-                      <Droplets className="h-5 w-5 unified-card-icon text-blue-500" />
-                      <div className="unified-card-content">
-                        <h5 className="unified-card-label">{isRussian ? GROW_METHOD_LABELS_RU[GROW_METHODS.HYDROPONIC] : GROW_METHOD_LABELS[GROW_METHODS.HYDROPONIC]}</h5>
-                        {!hideDescriptions && (
-                          <span className="unified-card-description">{isRussian ? GROW_METHOD_DESCRIPTIONS_RU[GROW_METHODS.HYDROPONIC] : GROW_METHOD_DESCRIPTIONS[GROW_METHODS.HYDROPONIC]}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div
-                      className={`unified-card unified-card-medium ${
                         growMethod === 'coco' ? 'selected' : ''
                       } ${hideDescriptions ? 'hide-descriptions' : ''}`}
                       onClick={() => setGrowMethod('coco')}
@@ -345,6 +334,20 @@ export default function SimplexCalc({ className = "", showThemeToggle = true }: 
                         <h5 className="unified-card-label">{isRussian ? GROW_METHOD_LABELS_RU[GROW_METHODS.COCO] : GROW_METHOD_LABELS[GROW_METHODS.COCO]}</h5>
                         {!hideDescriptions && (
                           <span className="unified-card-description">{isRussian ? GROW_METHOD_DESCRIPTIONS_RU[GROW_METHODS.COCO] : GROW_METHOD_DESCRIPTIONS[GROW_METHODS.COCO]}</span>
+                        )}
+                      </div>
+                    </div>
+                    <div
+                      className={`unified-card unified-card-medium ${
+                        growMethod === 'hydroponic' ? 'selected' : ''
+                      } ${hideDescriptions ? 'hide-descriptions' : ''}`}
+                      onClick={() => setGrowMethod('hydroponic')}
+                    >
+                      <Droplets className="h-5 w-5 unified-card-icon text-blue-500" />
+                      <div className="unified-card-content">
+                        <h5 className="unified-card-label">{isRussian ? GROW_METHOD_LABELS_RU[GROW_METHODS.HYDROPONIC] : GROW_METHOD_LABELS[GROW_METHODS.HYDROPONIC]}</h5>
+                        {!hideDescriptions && (
+                          <span className="unified-card-description">{isRussian ? GROW_METHOD_DESCRIPTIONS_RU[GROW_METHODS.HYDROPONIC] : GROW_METHOD_DESCRIPTIONS[GROW_METHODS.HYDROPONIC]}</span>
                         )}
                       </div>
                     </div>
@@ -1019,7 +1022,7 @@ export default function SimplexCalc({ className = "", showThemeToggle = true }: 
                                   <span className="text-sm font-medium">{add.name}</span>
                                   <span className="data-description">{add.defaultDose}</span>
                                   <span className="data-description">
-                                    {add.amount === '-' ? '-' : `${add.amount}${isRussian ? 'мл' : 'ml'}`}
+                                    {add.amountRange === '-' ? '-' : `${add.amountRange}${isRussian ? 'мл' : 'ml'}`}
                                   </span>
                                 </div>
                               ))}

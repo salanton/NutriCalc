@@ -31,6 +31,7 @@ export default defineConfig({
     },
   },
   // Настройки для GitHub Pages
+  // Если ваш репозиторий называется не NutriCalc, измените '/NutriCalc/' на '/ваше-имя-репозитория/'
   base: process.env.NODE_ENV === 'production' ? '/NutriCalc/' : '/',
   publicDir: 'public',
 });

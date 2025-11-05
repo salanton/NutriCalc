@@ -58,10 +58,30 @@ npm run preview
 
 ## 🌐 Deployment
 
-### GitHub Pages (Automatic)
-1. Push to `main` branch
-2. GitHub Actions automatically builds and deploys
-3. Available at: `https://[username].github.io/NutriCalc/`
+### GitHub Pages (Automatic - Recommended)
+
+1. **Настройте имя репозитория:**
+   - Если ваш репозиторий называется не `NutriCalc`, измените base path в `vite.config.ts`:
+     ```typescript
+     base: process.env.NODE_ENV === 'production' ? '/ваше-имя-репозитория/' : '/',
+     ```
+
+2. **Активируйте GitHub Pages:**
+   - Перейдите в `Settings` → `Pages`
+   - В разделе `Source` выберите: `GitHub Actions`
+
+3. **Деплой:**
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+4. **Результат:**
+   - GitHub Actions автоматически соберет и задеплоит приложение
+   - Доступно по адресу: `https://[username].github.io/NutriCalc/`
+
+Подробная инструкция в файле [DEPLOYMENT.md](./DEPLOYMENT.md)
 
 ### Manual Deployment
 ```bash

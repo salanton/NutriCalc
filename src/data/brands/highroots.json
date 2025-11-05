@@ -1,0 +1,66 @@
+{
+  "id": "highroots",
+  "name": "HIGHROOTS",
+  "code": "highroots",
+  "description": "HIGHROOTS root stimulants and biological products",
+  "description_ru": "HIGHROOTS стимуляторы корнеобразования и биопрепараты",
+  "nutrients": {},
+  "ecPh": {},
+  "additives": [
+    {
+      "id": "highroots-fish",
+      "name": "HIGHROOTS FISH",
+      "defaultDose": "1.0-2.0",
+      "description": "Root growth stimulant containing endo- and ectomycorrhizal fungi such as Trichoderma, Rhizopogon, Pseudomonas and Glomus for root system support",
+      "description_ru": "Стимулятор роста корневой системы, содержащий эндо- и эктомикоризные грибы (Trichoderma, Rhizopogon, Pseudomonas, Glomus) для поддержки корневой системы",
+      "application": "root",
+      "brand": "highroots",
+      "stages": {
+        "germination": "1.0-2.0",
+        "vegetative": "1.0-2.0",
+        "pre-flowering": "1.0-2.0",
+        "flowering-start": "0.5-1.0",
+        "flower-dev": "0.5-1.0",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "highroots-mushroom",
+      "name": "HIGHROOTS MUSHROOM",
+      "defaultDose": "1.0-2.0",
+      "description": "Biological product containing beneficial fungal strains that promote plant nutrition and soil improvement",
+      "description_ru": "Биопрепарат, содержащий полезные штаммы грибов, способствующие питанию растений и улучшению почвы",
+      "application": "root",
+      "brand": "highroots",
+      "stages": {
+        "germination": "1.0-2.0",
+        "vegetative": "1.0-2.0",
+        "pre-flowering": "1.0-2.0",
+        "flowering-start": "0.5-1.0",
+        "flower-dev": "0.5-1.0",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    },
+    {
+      "id": "highroots-spider",
+      "name": "HIGHROOTS SPIDER",
+      "defaultDose": "1.0-2.0",
+      "description": "Root system stimulant developed in collaboration with the Institute of Microbiology, providing increased root mass and accelerated plant growth",
+      "description_ru": "Стимулятор корневой системы, разработанный совместно с Институтом микробиологии, обеспечивающий увеличение корневой массы и ускоренный рост растений",
+      "application": "root",
+      "brand": "highroots",
+      "stages": {
+        "germination": "1.0-2.0",
+        "vegetative": "1.0-2.0",
+        "pre-flowering": "1.0-2.0",
+        "flowering-start": "0.5-1.0",
+        "flower-dev": "0.5-1.0",
+        "ripening": "0",
+        "flushing": "0"
+      }
+    }
+  ]
+}
+

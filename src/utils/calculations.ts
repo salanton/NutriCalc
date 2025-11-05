@@ -20,7 +20,7 @@ export function calculateNutrientAmount(nutrient: Nutrient, waterVolume: number)
 
 export function calculateAdditiveAmount(additive: Additive, stage: string, waterVolume: number): number {
   const stageDose = additive.stages[stage as keyof typeof additive.stages] || '0'
-  
+
   // Handle ranges (e.g., "0.5-2.0")
   if (stageDose.includes('-')) {
     const [min, max] = stageDose.split('-').map(v => parseFloat(v))
@@ -28,10 +28,26 @@ export function calculateAdditiveAmount(additive: Additive, stage: string, water
     const avgDose = (min + max) / 2
     return avgDose * waterVolume
   }
-  
+
   // Handle single values (e.g., "2.0")
   const dose = parseFloat(stageDose)
   return dose * waterVolume
+}
+
+export function calculateAdditiveAmountRange(additive: Additive, stage: string, waterVolume: number): string {
+  const stageDose = additive.stages[stage as keyof typeof additive.stages] || '0'
+
+  // Handle ranges (e.g., "0.5-2.0")
+  if (stageDose.includes('-')) {
+    const [min, max] = stageDose.split('-').map(v => parseFloat(v))
+    const minTotal = (min * waterVolume).toFixed(1)
+    const maxTotal = (max * waterVolume).toFixed(1)
+    return `${minTotal}-${maxTotal}`
+  }
+
+  // Handle single values (e.g., "2.0")
+  const dose = parseFloat(stageDose)
+  return (dose * waterVolume).toFixed(1)
 }
 
 export function formatAmount(amount: number): string {

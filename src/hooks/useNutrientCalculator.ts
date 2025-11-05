@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import type { GrowthStage, GrowMethod } from '../lib/types'
 import { dataService } from '../lib/dataService'
-import { calculateNutrientAmount, calculateAdditiveAmount, formatAmount } from '../utils/calculations'
+import { calculateNutrientAmount, calculateAdditiveAmount, calculateAdditiveAmountRange, formatAmount } from '../utils/calculations'
 
 interface CalculationResult {
   nutrients: Array<{ name: string; perLiter: string; amount: string }>
@@ -10,6 +10,7 @@ interface CalculationResult {
     name: string;
     defaultDose: string;
     amount: string;
+    amountRange: string;
     application?: string;
     foliarDose?: string;
     stageDose?: string;
@@ -60,8 +61,9 @@ export function useNutrientCalculator() {
             name: additiveData.name,
             defaultDose: additiveData.application === 'foliar'
               ? (additiveData.defaultDose || '')
-              : (/ml$/i.test(stageDose) ? stageDose : stageDose + 'ml'),
+              : (/ml$/i.test(stageDose) ? stageDose : stageDose + 'мл'),
             amount: formatAmount(calculateAdditiveAmount(additiveData, growthStage, waterVolume)),
+            amountRange: calculateAdditiveAmountRange(additiveData, growthStage, waterVolume),
             application: additiveData.application || '',
             foliarDose: additiveData.foliarDose || '',
             stageDose: stageDose,
@@ -74,6 +76,7 @@ export function useNutrientCalculator() {
             name: additiveData.name,
             defaultDose: '-',
             amount: '-',
+            amountRange: '-',
             application: additiveData.application || '',
             foliarDose: additiveData.foliarDose || '',
             stageDose: '-',

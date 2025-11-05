@@ -38,7 +38,15 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production
-      
+        
+    - name: Verify build output
+      run: |
+        if grep -q "src/main.tsx" dist/index.html; then
+          echo "ERROR: dist/index.html contains src/main.tsx - build failed!"
+          exit 1
+        fi
+        echo "Build verification passed"
+        
     - name: Setup Pages
       uses: actions/configure-pages@v4
       

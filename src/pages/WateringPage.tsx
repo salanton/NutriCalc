@@ -172,7 +172,7 @@ export default function WateringPage() {
       }
       
       for (let i = 0; i < wateringsPerDay; i++) {
-        const totalMinutes = firstWateringTime + (i * intervalMinutes)
+        const totalMinutes = Math.round(firstWateringTime + (i * intervalMinutes))
         const hours = Math.floor(totalMinutes / 60) % 24
         const minutes = totalMinutes % 60
         const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
@@ -190,7 +190,7 @@ export default function WateringPage() {
       
       // Generate schedule for one day
       for (let i = 0; i < wateringsPerDay; i++) {
-        const totalMinutes = startHour * 60 + startMinute + (i * intervalMinutes)
+        const totalMinutes = Math.round(startHour * 60 + startMinute + (i * intervalMinutes))
         const hours = Math.floor(totalMinutes / 60) % 24
         const minutes = totalMinutes % 60
         const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`

@@ -1,9 +1,30 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import { copyFileSync } from 'fs';
+
+// Плагин для копирования index.html в 404.html (для GitHub Pages SPA routing)
+const copy404Plugin = () => {
+  return {
+    name: 'copy-404',
+    closeBundle() {
+      // Копируем index.html в 404.html после сборки
+      const distPath = path.resolve(__dirname, 'dist');
+      try {
+        copyFileSync(
+          path.join(distPath, 'index.html'),
+          path.join(distPath, '404.html')
+        );
+        console.log('✓ Copied index.html to 404.html for GitHub Pages routing');
+      } catch (error) {
+        console.error('Failed to copy index.html to 404.html:', error);
+      }
+    },
+  };
+};
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), copy404Plugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -29,12 +29,73 @@ export default function HomePage() {
 
   const [api, setApi] = useState<CarouselApi>()
   const [methodApi, setMethodApi] = useState<CarouselApi>()
-  const [, setWateringMethodApi] = useState<CarouselApi>()
+  const [wateringMethodApi, setWateringMethodApi] = useState<CarouselApi>()
   const stageMap = ['germination', 'vegetative', 'pre-flowering', 'flowering-start', 'flower-dev', 'ripening', 'flushing']
   const methodMap = ['soil', 'hydroponic', 'coco']
+  const wateringMethodMap = ['manual', 'drip', 'hydroponic']
   
   // Состояние для метода полива
   const [wateringMethod, setWateringMethod] = useState<'manual' | 'drip' | 'hydroponic'>('manual')
+  
+  // Загружаем метод полива из localStorage при монтировании
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('nutricalc-watering')
+      if (saved) {
+        const wateringData = JSON.parse(saved)
+        if (wateringData.wateringMethod) {
+          setWateringMethod(wateringData.wateringMethod)
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load watering method from localStorage:', error)
+    }
+  }, [])
+  
+  // Сохраняем метод полива в localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('nutricalc-watering')
+      const wateringData = saved ? JSON.parse(saved) : {}
+      wateringData.wateringMethod = wateringMethod
+      localStorage.setItem('nutricalc-watering', JSON.stringify(wateringData))
+    } catch (error) {
+      console.warn('Failed to save watering method to localStorage:', error)
+    }
+  }, [wateringMethod])
+  
+  // Sync watering method carousel to wateringMethod changes
+  useEffect(() => {
+    if (!wateringMethodApi) {
+      return
+    }
+
+    const methodIndex = wateringMethodMap.indexOf(wateringMethod)
+    if (methodIndex !== -1 && wateringMethodApi.selectedScrollSnap() !== methodIndex) {
+      wateringMethodApi.scrollTo(methodIndex)
+    }
+  }, [wateringMethodApi, wateringMethod, wateringMethodMap])
+
+  // Listen for watering method carousel slide changes
+  useEffect(() => {
+    if (!wateringMethodApi) {
+      return
+    }
+
+    const onSelect = () => {
+      const selectedIndex = wateringMethodApi.selectedScrollSnap()
+      const method = wateringMethodMap[selectedIndex] as 'manual' | 'drip' | 'hydroponic'
+      if (method && method !== wateringMethod) {
+        setWateringMethod(method)
+      }
+    }
+
+    wateringMethodApi.on('select', onSelect)
+
+    return () => {
+      wateringMethodApi.off('select', onSelect)
+    }
+  }, [wateringMethodApi, wateringMethod, wateringMethodMap])
 
   // Sync method carousel to growMethod changes
   useEffect(() => {

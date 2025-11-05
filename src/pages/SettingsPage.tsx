@@ -25,7 +25,7 @@ export default function SettingsPage() {
     setShowAverageValues,
   } = useCalculatorWithSettings()
 
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   // Состояния для правил полива

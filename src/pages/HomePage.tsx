@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Droplet, Leaf, SproutIcon as Seedling, Sun, Flower, Moon, Check, Minus, Plus, TreePine, Droplets, SprayCan, Waves } from "lucide-react"
 import { SectionCard } from "@/components/section-card"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
 import { useCalculatorWithSettings } from '@/hooks/useCalculatorWithSettings'
@@ -25,24 +24,17 @@ export default function HomePage() {
     growthStage,
     setGrowthStage,
     isRussian,
-    setIsRussian,
     hideDescriptions,
-    setHideDescriptions,
-    isProMode,
-    setIsProMode,
-    showAverageValues,
-    setShowAverageValues,
   } = useCalculatorWithSettings()
 
   const [api, setApi] = useState<CarouselApi>()
   const [methodApi, setMethodApi] = useState<CarouselApi>()
-  const [wateringMethodApi, setWateringMethodApi] = useState<CarouselApi>()
+  const [, setWateringMethodApi] = useState<CarouselApi>()
   const stageMap = ['germination', 'vegetative', 'pre-flowering', 'flowering-start', 'flower-dev', 'ripening', 'flushing']
   const methodMap = ['soil', 'hydroponic', 'coco']
   
   // Состояние для метода полива
   const [wateringMethod, setWateringMethod] = useState<'manual' | 'drip' | 'hydroponic'>('manual')
-  const wateringMethodMap = ['manual', 'drip', 'hydroponic']
 
   // Sync method carousel to growMethod changes
   useEffect(() => {
@@ -531,138 +523,6 @@ export default function HomePage() {
                     <span className="w-8 text-center">50</span>
                   </div>
 
-{/* Base Parameters moved to Watering page */}
-                  {false && (
-                    <div className="w-full pt-4 mt-4">
-                      <div className="flex flex-col gap-2 mb-3">
-                        <div className="text-lg font-semibold flex items-center gap-2">
-                          <Gauge className="h-5 w-5 text-blue-500" />
-                          {isRussian ? 'Базовые параметры воды' : 'Base Water Parameters'}
-                        </div>
-                        <p className="text-sm text-muted-foreground pl-7">
-                          {isRussian ? 'Параметры воды из вашего источника' : 'Parameters from your water source'}
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap items-center justify-center gap-4 md:gap-[120px] w-full max-w-2xl px-4 mx-auto">
-                        {/* pH Input */}
-                        <div className="flex flex-col items-center gap-1">
-                          <Label htmlFor="basePh" className="text-xs mb-1">{isRussian ? 'Базовый pH' : 'Base pH'}</Label>
-                          <div className="flex items-center justify-center gap-1">
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBasePh(Math.max(4, Number((basePh - 0.1).toFixed(1))))}
-                            >
-                              <Minus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                            <div className="relative w-14">
-                              <input
-                                type="text"
-                                value={`${basePh}`}
-                                onChange={(e) => {
-                                  const value = e.target.value;
-                                  if (value === '' || !isNaN(Number(value))) {
-                                    const numValue = value === '' ? 0 : Number(value);
-                                    if (numValue >= 4 && numValue <= 9) {
-                                      setBasePh(numValue);
-                                    }
-                                  }
-                                }}
-                                className="text-lg font-bold w-full h-[36px] text-center bg-transparent border-none focus:outline-none focus:ring-0 p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                              />
-                            </div>
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBasePh(Math.min(9, Number((basePh + 0.1).toFixed(1))))}
-                            >
-                              <Plus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                          </div>
-                        </div>
-
-                        {/* EC Input */}
-                        <div className="flex flex-col items-center gap-1">
-                          <Label htmlFor="baseEc" className="text-xs mb-1">{isRussian ? 'Базовый EC' : 'Base EC'}</Label>
-                          <div className="flex items-center justify-center gap-1">
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBaseEc(Math.max(0.1, Number((baseEc - 0.1).toFixed(1))))}
-                            >
-                              <Minus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                            <div className="relative w-14">
-                              <input
-                                type="text"
-                                value={`${baseEc}`}
-                                onChange={(e) => {
-                                  const value = e.target.value;
-                                  if (value === '' || !isNaN(Number(value))) {
-                                    const numValue = value === '' ? 0 : Number(value);
-                                    if (numValue >= 0.1 && numValue <= 5) {
-                                      setBaseEc(numValue);
-                                    }
-                                  }
-                                }}
-                                className="text-lg font-bold w-full h-[36px] text-center bg-transparent border-none focus:outline-none focus:ring-0 p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                              />
-                            </div>
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBaseEc(Math.min(5, Number((baseEc + 0.1).toFixed(1))))}
-                            >
-                              <Plus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                          </div>
-                        </div>
-
-                        {/* Temperature Input */}
-                        <div className="flex flex-col items-center gap-1">
-                          <Label htmlFor="baseTemperature" className="text-xs mb-1">{isRussian ? 'Температура' : 'Temperature'}</Label>
-                          <div className="flex items-center justify-center gap-1">
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBaseTemperature(Math.max(0, baseTemperature - 1))}
-                            >
-                              <Minus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                            <div className="relative w-14">
-                              <input
-                                type="text"
-                                value={`${baseTemperature}`}
-                                onChange={(e) => {
-                                  const value = e.target.value;
-                                  if (value === '' || !isNaN(Number(value))) {
-                                    const numValue = value === '' ? 0 : Number(value);
-                                    if (numValue >= 0 && numValue <= 40) {
-                                      setBaseTemperature(Math.round(numValue));
-                                    }
-                                  }
-                                }}
-                                className="text-lg font-bold w-full h-[36px] text-center bg-transparent border-none focus:outline-none focus:ring-0 p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                              />
-                            </div>
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="h-8 w-8 rounded-full border-gray-300"
-                              onClick={() => setBaseTemperature(Math.min(40, baseTemperature + 1))}
-                            >
-                              <Plus className="h-3 w-3 text-gray-600" />
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
           </SectionCard>

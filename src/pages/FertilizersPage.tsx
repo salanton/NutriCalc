@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Leaf, Droplets, TreePine, Droplet, SprayCan, Circle, CheckCheck, CircleDot, Check, Flower, TestTube2, PlusSquare, CheckSquare } from "lucide-react"
+import React from 'react'
+import { Droplet, SprayCan, Circle, CheckCheck, CircleDot, Check, TestTube2, PlusSquare, CheckSquare } from "lucide-react"
 import { SectionCard } from "@/components/section-card"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { dataService } from '@/lib/dataService'
-import {
-  GROW_METHODS, GROW_METHOD_LABELS, GROW_METHOD_DESCRIPTIONS,
-  GROW_METHOD_LABELS_RU, GROW_METHOD_DESCRIPTIONS_RU
-} from '@/constants/grow-methods'
 import { useCalculatorWithSettings } from '@/hooks/useCalculatorWithSettings'
 import type { Additive, GrowMethod, Nutrient } from '@/lib/types'
 import { BottomNavigation } from "@/components/bottom-navigation"
@@ -16,18 +12,14 @@ export default function FertilizersPage() {
 
   const {
     growMethod,
-    toggleGrowMethod,
     growthStage,
     selectedAdditives,
     setSelectedAdditives,
     nutrientBrand,
     setNutrientBrand,
     hideDescriptions,
-    setHideDescriptions,
     isProMode,
-    setIsProMode,
     isRussian,
-    setIsRussian,
     selectedAdditiveBrands,
     setSelectedAdditiveBrands,
     toggleAdditive,
@@ -39,7 +31,6 @@ export default function FertilizersPage() {
     isNutrientBrandSelected,
     selectedNutrientBrands,
     showAverageValues,
-    setShowAverageValues,
   } = useCalculatorWithSettings()
 
 
